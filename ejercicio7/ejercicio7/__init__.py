@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, jsonify
 from config import Config
 from flask import render_template, request
 def init_app():
@@ -9,8 +9,8 @@ def init_app():
     @app.route('/operate', methods=['GET'])
     def operacion_num():
         operacion = request.args.get('operacion')
-        num1 = init(request.args.get('num1'))
-        num2 = init(request.args.get('num2'))
+        num1 = int(request.args.get('num1'))
+        num2 = int(request.args.get('num2'))
         
         if operacion == 'sum':
             resultado = num1 + num2
