@@ -1,5 +1,5 @@
 from flask import Flask
-from ..config import Config
+from config import Config
 def init_app():
     """Crea y configura la aplicación Flask"""
     app = Flask(__name__, static_folder = Config.STATIC_FOLDER, template_folder = Config.TEMPLATE_FOLDER)
@@ -17,7 +17,7 @@ def init_app():
             if num2 != 0:
                 resultado = num1 / num2
             else:
-                return {'La división no está definida para el denominador 0'}
+                return f'La división no está definida para el denominador 0'
         else:
             return f'Operación no válida: {operacion}'
         return {'resultado': resultado } 
