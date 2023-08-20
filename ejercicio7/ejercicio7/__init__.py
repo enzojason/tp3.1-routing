@@ -1,5 +1,6 @@
 from flask import Flask
 from ..config import Config
+from flask import render_template, request
 def init_app():
     """Crea y configura la aplicación Flask"""
     app = Flask(__name__, static_folder = Config.STATIC_FOLDER, template_folder = Config.TEMPLATE_FOLDER)
