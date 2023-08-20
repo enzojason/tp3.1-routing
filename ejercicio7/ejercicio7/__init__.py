@@ -1,5 +1,5 @@
 from flask import Flask
-from ..config import Config
+from config import Config
 from flask import render_template, request
 def init_app():
     """Crea y configura la aplicación Flask"""
